@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="BloodMoon.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:BloodMoon"
+    Shell.FlyoutBehavior="Disabled"
+    Title="BCalendar">
+
+    <ShellContent
+        ContentTemplate="{DataTemplate local:CalendarPage}"
+        Route="CalendarPage" />
+
+</Shell>

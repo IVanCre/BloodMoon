@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BloodMoon.CalendarPage"
+             Title="Календарь">
+
+    <Grid RowDefinitions="Auto, *">
+        <Image Grid.RowSpan="2"
+           Source="red_moon.jpg" 
+           Aspect="AspectFill" 
+           Opacity="0.8"/>
+
+        <Grid Grid.Row="0" 
+          ColumnDefinitions="Auto, *, Auto" 
+          Padding="10" 
+          Margin="0,10"
+          HorizontalOptions="Center"
+          WidthRequest="320">
+
+            <Button Grid.Column="0"
+                x:Name="BackBtn"
+                Text="&lt;" 
+                Clicked="OnPrevMonthClicked" 
+                WidthRequest="50" 
+                HeightRequest="45"
+                BackgroundColor="White" 
+                TextColor="Black" />
+
+            <Label Grid.Column="1"
+               x:Name="MonthYearLabel" 
+               FontSize="20" 
+               FontAttributes="Bold"
+               VerticalOptions="Center" 
+               TextColor="White"
+               HorizontalTextAlignment="Center" />
+
+            <Button Grid.Column="2"
+                x:Name="ForwardBtn"
+                Text="&gt;" 
+                Clicked="OnNextMonthClicked" 
+                WidthRequest="50" 
+                HeightRequest="45"
+                BackgroundColor="White" 
+                TextColor="Black" />
+        </Grid>
+
+        <VerticalStackLayout Grid.Row="1" Padding="10" Spacing="10">
+            <Grid x:Name="DayNamesGrid" ColumnDefinitions="*,*,*,*,*,*,*" ColumnSpacing="2" />
+            <Grid x:Name="CalendarGrid" ColumnDefinitions="*,*,*,*,*,*,*" ColumnSpacing="2" RowSpacing="2" />
+            
+            <Grid RowDefinitions="Auto, Auto, Auto">
+                <Label Grid.Row="0" Text="Текущее число" BackgroundColor="Lime"/>
+                <Label Grid.Row="1" Text="Начало цикла " BackgroundColor="DarkTurquoise"/>
+                <Label Grid.Row="2" Text="Прогноз цикла" BackgroundColor="HotPink"/>
+            </Grid>
+        </VerticalStackLayout>
+
+
+
+
+
+    </Grid>
+</ContentPage>
